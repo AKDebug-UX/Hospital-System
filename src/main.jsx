@@ -1,32 +1,58 @@
-import React, { createContext, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App.jsx";
-import "./App.css";
-import "./globals.css";
+import App from "./App";
+import "./styles/globals.css";
+import "./styles/App.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-
-export const Context = createContext({ isAuthenticated: false });
-
-const AppWrapper = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [admin, setAdmin] = useState({});
-
-  return (
-    <Context.Provider
-      value={{ isAuthenticated, setIsAuthenticated, admin, setAdmin }}
-    >
-      <App />
-      <ToastContainer />
-    </Context.Provider>
-  );
-};
+import Provider from "./context/myState";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <AppWrapper />
-    <ToastContainer />
-  </BrowserRouter>,
+  <React.StrictMode>
+    <Provider>
+      <App />
+      <ToastContainer />
+    </Provider>
+  </React.StrictMode>,
   document.getElementById("root")
 );
+
+
+
+
+
+
+
+// import React, { createContext, useState } from "react";
+// import ReactDOM from "react-dom";
+// import App from "./App.jsx";
+// import "./App.css";
+// import "./globals.css";
+// import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer } from "react-toastify";
+
+// export const Context = createContext({ isAuthenticated: false });
+
+// // const AppWrapper = () => {
+// //   const [isAuthenticated, setIsAuthenticated] = useState(false);
+// //   const [admin, setAdmin] = useState({});
+
+// //   return (
+// //     <Context.Provider
+// //       value={{ isAuthenticated, setIsAuthenticated, admin, setAdmin }}
+// //     >
+// //       <App />
+// //       <ToastContainer />
+// //     </Context.Provider>
+// //   );
+// // };
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     {/* <Provider store={store}> */}
+//     <App />
+//     {/* </Provider> */}
+//     <ToastContainer />
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
