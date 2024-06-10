@@ -6,7 +6,7 @@ const Dashboard = () => {
       <section className="dashboard page">
         <div className="banner">
           <div className="content">
-            <div>Hello ,</div>
+            <div className="text-[35px]">Hello ,</div>
           </div>
         </div>
       </section>
