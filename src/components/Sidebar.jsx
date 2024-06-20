@@ -56,21 +56,27 @@ const Sidebar = () => {
   return (
     <>
       <nav
-        style={!isAuthenticated ? { display: "none" } : { display: "flex" }}
-        className={show ? "show sidebar" : "sidebar"}
+        style={!isAuthenticated ? { display: "flex" } : { display: "flex" }}
+        className={show ? "sidebar" : "show sidebar"}
       >
         <div className="links">
-          <TiHome onClick={gotoHomePage} />
+          <TiHome />
+          <FaUserDoctor />
+          <MdAddModerator />
+          <IoPersonAddSharp />
+          <AiFillMessage />
+          <RiLogoutBoxFill />
+          {/* <TiHome onClick={gotoHomePage} />
           <FaUserDoctor onClick={gotoDoctorsPage} />
           <MdAddModerator onClick={gotoAddNewAdmin} />
           <IoPersonAddSharp onClick={gotoAddNewDoctor} />
           <AiFillMessage onClick={gotoMessagesPage} />
-          <RiLogoutBoxFill onClick={handleLogout} />
+          <RiLogoutBoxFill onClick={handleLogout} /> */}
         </div>
       </nav>
       <div
         className="wrapper"
-        style={!isAuthenticated ? { display: "none" } : { display: "flex" }}
+        style={!isAuthenticated ? { display: "flex" } : { display: "flex" }}
       >
         <GiHamburgerMenu className="hamburger" onClick={() => setShow(!show)} />
       </div>

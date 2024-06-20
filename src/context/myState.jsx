@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import MyContext from "./myContext";
-import { toast } from "react-toastify";
+import axios from "axios"
 
 function myState(props) {
-  const [mode, setMode] = useState("dark");
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const [mode, setMode] = useState("light");
+  const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
+  const [user, setUser] = useState([]);
+  const [coins, setCoin] = useState([]);
 
   const toggleMode = () => {
     if (mode === "dark") {
@@ -11,33 +17,52 @@ function myState(props) {
       document.body.style.backgroundColor = "white";
     } else {
       setMode("dark");
-      document.body.style.backgroundColor = "rgb(17, 24, 39)";
+      document.body.style.backgroundColor = "#3c3c3c";
     }
   };
 
-  const [loading, setLoading] = useState(false);
+  // auth.onAuthStateChanged(user => {
+  //   if (user) {
+  //     // console.log('User is signed in:', user);
+  //     setShow(false);
+  //   } else {
+  //     console.log('No user is signed in.');
+  //   }
+  // });
 
-  const [products, setProducts] = useState({
-    title: null,
-    price: null,
-    imageUrl: null,
-    category: null,
-    description: null,
-    time: null,
-    date: null,
-  });
+  const logout = () => {
+    localStorage.clear('user');
+    window.location.href = '/sign-in'
+  }
 
-  const [searchkey, setSearchkey] = useState("");
-  const [filterType, setFilterType] = useState("");
-  const [filterPrice, setFilterPrice] = useState("");
+
+  const fetchUser = async () => {
+    
+  };
+
+  // Retrieve user details from localStorage
+  useEffect(() => {
+    const storedUserDetails = localStorage.getItem("userInfo");
+
+    if (storedUserDetails) {
+      const userInfo = JSON.parse(storedUserDetails);
+      setUser(userInfo);
+    }
+  }, []);
 
   return (
     <MyContext.Provider
       value={{
         mode,
+        coins,
+        user,
+        show,
+        setUser,
         toggleMode,
         loading,
         setLoading,
+        fetchUser,
+        logout
       }}
     >
       {props.children}
