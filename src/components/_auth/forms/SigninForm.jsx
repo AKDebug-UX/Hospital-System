@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../../ui/Button";
 import Loader from "../../ui/Loader";
 import { toast } from "react-toastify";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../firebase-config";
 
 const SigninForm = () => {
   const navigate = useNavigate();
@@ -14,31 +12,6 @@ const SigninForm = () => {
 
   // ============================== SIGN IN
 
-  const signInAccount = async () => {
-    setLoading(true);
-    try {
-      const result = await signInWithEmailAndPassword(auth, email, password);
-      toast.success("Login successful", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-      localStorage.setItem("user", JSON.stringify(result.user));
-      navigate("/");
-      setLoading(false);
-      console.log(result);
-    } catch (error) {
-      console.error("An error occurred:");
-      toast({ title: "Incorrect Email and Password" });
-      setLoading(isLoading);
-      // toast({ title: "Login failed. Please try again."});
-    }
-  };
 
   return (
     <div className="flex w-full sm:w-[60%] mx-auto mt-[5em] md:mt-1 p-3 justify-center items-center flex-col">
@@ -77,7 +50,7 @@ const SigninForm = () => {
 
         <Button
           type="submit"
-          onClick={signInAccount}
+          // onClick={signInAccount}
           className="bg-primary_A1 text-white p-3 rounded-md"
         >
           {isLoading ? (

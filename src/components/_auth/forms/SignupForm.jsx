@@ -1,20 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../../ui/Button";
 import Loader from "../../ui/Loader";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
-import { auth, db } from "../../../firebase-config";
-import {
-  addDoc,
-  collection,
-  Timestamp,
-  // doc,
-  // serverTimestamp,
-  // updateDoc,
-} from "firebase/firestore";
-// import { getDownloadURL, ref, uploadString } from "firebase/storage";
 
 const SignupForm = () => {
   const navigate = useNavigate();
@@ -25,49 +13,6 @@ const SignupForm = () => {
   const [isLoading, setLoading] = useState(false);
 
   // ============================== SIGN UP
-  const createUserAccount = async () => {
-    // setLoading(true);
-    if (name === "" || username === "" || email === "" || password === "") {
-      return toast({ title: "All fields are required" });
-    }
-
-    try {
-      const users = await createUserWithEmailAndPassword(auth, email, password);
-
-      console.log(users);
-
-      const user = {
-        name: name,
-        username: username,
-        uid: users.user.uid,
-        email: users.user.email,
-        time: Timestamp.now(),
-        appName: "SquareMaX",
-      };
-      const userRef = collection(db, "users");
-      await addDoc(userRef, user);
-      toast.success("Signup successful", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-      setName("");
-      setUsername("");
-      setEmail("");
-      setPassword("");
-      navigate("/");
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      toast.error("EMAIL_EXISTS");
-      setLoading(false);
-    }
-  };
 
   return (
     <>
@@ -78,7 +23,7 @@ const SignupForm = () => {
           Create a new account
         </h2>
         <p className="text-primary_A2 small-medium md:base-regular mt-2">
-          To use SquareMax, Please enter your details
+          To use Hospital System, Please enter your details
         </p>
 
         <div className="flex flex-col gap-5 w-full mt-4">
@@ -132,7 +77,7 @@ const SignupForm = () => {
 
           <Button
             type="submit"
-            onClick={createUserAccount}
+            // onClick={createUserAccount}
             className="bg-primary_A1 text-white p-3 rounded-md"
           >
             {isLoading ? (

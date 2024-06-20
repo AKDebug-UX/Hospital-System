@@ -20,7 +20,7 @@ const LeftSidebar = () => {
       <div className="flex flex-col gap-6">
         <Link to="/" className="flex gap-3 mb-3 items-center">
           <img src="/assets/icons/logo.png" alt="logo" className="" />
-          <h1 className="text-[22px] text-white font-bold">Site Name</h1>
+          <h1 className="text-[22px] text-white font-bold">Hospital System</h1>
         </Link>
 
         {isLoading || show ? (

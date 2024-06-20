@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RootLayout from "./components/_root/RootLayout";
 import AuthLayout from "./components/_auth/AuthLayout";
-// import SigninForm from "./components/_auth/forms/SigninForm";
-// import SignupForm from "./components/_auth/forms/SignupForm";
+import SigninForm from "./components/_auth/forms/SigninForm";
+import SignupForm from "./components/_auth/forms/SignupForm";
 import Dashboard from "./components/_root/Dashboard";
 // import Login from "./components/Login";
 // import AddNewDoctor from "./components/AddNewDoctor";
@@ -22,8 +22,8 @@ const App = () => {
         <Routes>
           {/* public routes */}
           <Route element={<AuthLayout />}>
-            {/* <Route path="/sign-in" element={<SigninForm />} /> */}
-            {/* <Route path="/sign-up" element={<SignupForm />} /> */}
+            <Route path="/sign-in" element={<SigninForm />} />
+            <Route path="/sign-up" element={<SignupForm />} />
           </Route>
 
           {/* private routes */}
