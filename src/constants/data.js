@@ -1,7 +1,17 @@
 export const smallBox = [
     {
-        imgURL: "",
+        imgURL: "people-outline",
+        title: "Total Patients",
+        subtitle: "",
+    },
+    {
+        imgURL: "calendar-outline",
         title: "Total Appointments",
+        subtitle: "",
+    },
+    {
+        imgURL: "document-outline",
+        title: "Prescriptions",
         subtitle: "",
     },
     {
@@ -11,17 +21,7 @@ export const smallBox = [
     },
     {
         imgURL: "",
-        title: "",
-        subtitle: "",
-    },
-    {
-        imgURL: "",
-        title: "",
-        subtitle: "",
-    },
-    {
-        imgURL: "",
-        title: "",
+        title: "Total Earnings",
         subtitle: "",
     },
     {

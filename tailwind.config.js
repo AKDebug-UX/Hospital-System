@@ -21,7 +21,7 @@ module.exports = {
         'primary_A1': '#749D1C',
         'primary_A2': '#749D1C',
         'primary-500': '#749D1C',
-        'primary-600': '#5D5FEF',
+        'grey': '#E5E5E5',
         'secondary-500': '#FFB620',
         'off-white': '#D0DFFF',
         'red': '#FF5A5A',
