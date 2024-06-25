@@ -11,6 +11,7 @@ export const sidebarLinks = [
     imgURL: <TiHome />,
     route: "/",
     label: "Dashboard",
+    status: "all"
   },
   {
     imgURL: <FaUserDoctor />,

@@ -16,6 +16,14 @@ a{
   text-decoration: inherit;
 }
 
+.icon-box {
+  color: white;
+}
+
+.card {
+  background-color: white;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;

@@ -24,7 +24,7 @@ const shapeLine = {
       curve: "smooth",
       width: 2,
     },
-    colors: ["#749D1C"],
+    colors: [""],
     tooltip: {
       theme: "light",
     },
@@ -66,7 +66,7 @@ const shapeLine = {
 };
 
 
-const ChartDays = () => {
+const ChartDays = ({color}) => {
   const { id } = useParams();
   const location = useLocation();
   const isOverviewPage = location.pathname === `/stories-details-page/${id}`;

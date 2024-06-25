@@ -1,27 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./styles/globals.css";
 import "./styles/App.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import Provider from "./context/myState";
+import Context from "./context/myState";
+import { Provider } from "react-redux";
+import store from "./context/app/store";
 
-ReactDOM.render(
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider>
-      <App />
-      <ToastContainer />
+    <Provider store={store}>
+      <Context>
+        <App />
+        <ToastContainer />
+      </Context>
     </Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
-
-
-
-
-
-
 
 // import React, { createContext, useState } from "react";
 // import ReactDOM from "react-dom";
