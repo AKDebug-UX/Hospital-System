@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "@/components/ui/Card";
 import ImageBlock2 from "@/components/partials/widget/block/image-block-2";
-import GroupChart2 from "@/components/partials/widget/chart/group-chart-2";
+import GroupChart2 from "@/components/partials/widget/chart/group-chart";
 import RevenueBarChart from "@/components/partials/widget/chart/revenue-bar-chart";
 import ProfitChart from "../../components/partials/widget/chart/profit-chart";
 import OrderChart from "../../components/partials/widget/chart/order-chart";

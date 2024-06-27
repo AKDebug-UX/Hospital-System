@@ -208,7 +208,7 @@ const shapeLine3 = {
 const statistics = [
   {
     name: shapeLine1,
-    title: "Totel revenue",
+    title: "Total Appointments",
     count: "3,564",
     bg: "bg-[#E5F9FF] dark:bg-slate-900	",
     text: "text-info-500",
@@ -216,7 +216,7 @@ const statistics = [
   },
   {
     name: shapeLine2,
-    title: "Products sold",
+    title: "Registered Doctors",
     count: "564",
     bg: "bg-[#FFEDE6] dark:bg-slate-900	",
     text: "text-warning-500",
@@ -232,7 +232,7 @@ const statistics = [
   },
 ];
 
-const GroupChart2 = () => {
+const GroupChart = () => {
   return (
     <>
       {" "}
@@ -272,4 +272,4 @@ const GroupChart2 = () => {
   );
 };
 
-export default GroupChart2;
+export default GroupChart;
