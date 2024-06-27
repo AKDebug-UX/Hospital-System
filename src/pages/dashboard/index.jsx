@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "@/components/ui/Card";
-import ImageBlock2 from "@/components/partials/widget/block/image-block-2";
-import GroupChart2 from "@/components/partials/widget/chart/group-chart";
+import ImageBlock from "@/components/partials/widget/block/image-block";
+import GroupChart from "@/components/partials/widget/chart/group-chart";
 import RevenueBarChart from "@/components/partials/widget/chart/revenue-bar-chart";
 import ProfitChart from "../../components/partials/widget/chart/profit-chart";
 import OrderChart from "../../components/partials/widget/chart/order-chart";
@@ -12,7 +12,6 @@ import RecentOrderTable from "../../components/partials/Table/recentOrder-table"
 import BasicArea from "../../pages/chart/appex-chart/BasicArea";
 import VisitorRadar from "../../components/partials/widget/chart/visitor-radar";
 import MostSales2 from "../../components/partials/widget/most-sales2";
-import Products from "../../components/partials/widget/products";
 import HomeBredCurbs from "./HomeBredCurbs";
 
 const Dashboard = () => {
@@ -21,15 +20,21 @@ const Dashboard = () => {
     <div>
       <HomeBredCurbs title="Dashboard" />
       <div className="grid grid-cols-12 gap-5 mb-5">
-        <div className="2xl:col-span-3 lg:col-span-4 col-span-12">
-          <ImageBlock2 />
+        <div className="2xl:col-span-3 lg:col-span-6 col-span-12">
+          <ImageBlock />
         </div>
-        <div className="2xl:col-span-9 lg:col-span-8 col-span-12">
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
-            <GroupChart2 />
-          </div>
+      <div className="2xl:col-span-9 lg:col-span-12 col-span-12 hidden xl:block">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 grid-cols-1 gap-4">
+          <GroupChart />
         </div>
       </div>
+      </div>
+      <div className="2xl:col-span-9 lg:col-span-12 col-span-12 mb-4 xl:hidden block">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 grid-cols-1 gap-4">
+          <GroupChart />
+        </div>
+      </div>
+
       <div className="grid grid-cols-12 gap-5">
         <div className="2xl:col-span-8 lg:col-span-7 col-span-12">
           <Card>

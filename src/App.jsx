@@ -22,7 +22,6 @@ const InvoicePreviewPage = lazy(() =>
 );
 const InvoiceEditPage = lazy(() => import("./pages/utility/invoice-edit"));
 const PricingPage = lazy(() => import("./pages/utility/pricing"));
-const BlankPage = lazy(() => import("./pages/utility/blank-page"));
 const ComingSoonPage = lazy(() => import("./pages/utility/coming-soon"));
 const UnderConstructionPage = lazy(() =>
   import("./pages/utility/under-construction")
@@ -65,7 +64,6 @@ function App() {
           <Route path="invoice-preview" element={<InvoicePreviewPage />} />
           <Route path="invoice-edit" element={<InvoiceEditPage />} />
           <Route path="pricing" element={<PricingPage />} />
-          <Route path="blank-page" element={<BlankPage />} />
           <Route path="faq" element={<FaqPage />} />
           <Route path="settings" element={<Settings />} />
           <Route path="profile" element={<Profile />} />

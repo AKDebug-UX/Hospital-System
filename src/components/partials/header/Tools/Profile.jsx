@@ -59,20 +59,6 @@ const Profile = () => {
       },
     },
     {
-      label: "Email",
-      icon: "heroicons-outline:mail",
-      action: () => {
-        navigate("/email");
-      },
-    },
-    {
-      label: "Todo",
-      icon: "heroicons-outline:clipboard-check",
-      action: () => {
-        navigate("/todo");
-      },
-    },
-    {
       label: "Settings",
       icon: "heroicons-outline:cog",
       action: () => {

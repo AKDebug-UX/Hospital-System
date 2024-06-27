@@ -1,6 +1,6 @@
 import React from "react";
 import Image2 from "@/assets/images/all-img/widget-bg-2.png";
-const ImageBlock2 = () => {
+const ImageBlock = () => {
   return (
     <div
       className="bg-no-repeat bg-cover bg-center p-5 rounded-[6px] relative"
@@ -19,4 +19,4 @@ const ImageBlock2 = () => {
   );
 };
 
-export default ImageBlock2;
+export default ImageBlock;
