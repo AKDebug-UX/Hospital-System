@@ -104,11 +104,11 @@ const Dashboard = () => {
             <MostSales2 filterMap={filterMap} />
           </Card>
         </div>
-        <div className="xl:col-span-6 col-span-12">
+        {/* <div className="xl:col-span-6 col-span-12">
           <Card title="Best selling products" headerslot={<SelectMonth />}>
             <Products />
           </Card>
-        </div>
+        </div> */}
       </div>
     </div>
   );
