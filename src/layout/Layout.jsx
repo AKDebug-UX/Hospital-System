@@ -51,7 +51,7 @@ const Layout = () => {
         <Header />
         <Sidebar />
 
-        <section className="flex flex-1 md:ml-[18em] p-3 md:p-0 mt-4 md:mr-4 mb-12 h-full">
+        <section className="flex flex-col gap-3 md:ml-[18em] p-3 md:p-0 mt-4 md:mr-4 mb-12 h-full">
           <div
             className={
               contentWidth === "boxed" ? "container mx-auto" : "container-fluid"
@@ -88,9 +88,8 @@ const Layout = () => {
               </motion.div>
             </Suspense>
           </div>
+          <Footer />
         </section>
-
-        <Footer />
       </div>
     </>
   );
