@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const HorizentalMenu = () => {
   return (
-    <div className="main-menu">
+    <div className="main-menu bg-black">
       <ul>
         {topMenu?.map((item, i) => (
           <li

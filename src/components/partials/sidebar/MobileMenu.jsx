@@ -15,7 +15,7 @@ import MobileLogo from "@/assets/images/logo/logo-c.svg";
 import MobileLogoWhite from "@/assets/images/logo/logo-c-white.svg";
 import svgRabitImage from "@/assets/images/svg/rabit.svg";
 
-const MobileMenu = ({ className = "custom-class" }) => {
+const MobileMenu = ({ setSideNav, className = "custom-class" }) => {
   const scrollableNodeRef = useRef();
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -36,7 +36,7 @@ const MobileMenu = ({ className = "custom-class" }) => {
   const [mobileMenu, setMobileMenu] = useMobileMenu();
   return (
     <div
-      className={`${className} fixed  top-0 bg-white dark:bg-slate-800 shadow-lg  h-full   w-[248px]`}
+      className={`${className} fixed ml-[-15px] top-0 bg-white dark:bg-slate-800 shadow-lg  h-full   w-[288px]`}
     >
       <div className="logo-segment flex justify-between items-center bg-white dark:bg-slate-800 z-[9] h-[85px]  px-4 ">
         <Link to="/dashboard">
@@ -50,14 +50,14 @@ const MobileMenu = ({ className = "custom-class" }) => {
             </div>
             <div>
               <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                DashCode
+                Hospital System
               </h1>
             </div>
           </div>
         </Link>
         <button
           type="button"
-          onClick={() => setMobileMenu(!mobileMenu)}
+          onClick={() => setSideNav(false)}
           className="cursor-pointer text-slate-900 dark:text-white text-2xl"
         >
           <Icon icon="heroicons:x-mark" />
@@ -74,24 +74,6 @@ const MobileMenu = ({ className = "custom-class" }) => {
         scrollableNodeProps={{ ref: scrollableNodeRef }}
       >
         <Navmenu menus={menuItems} />
-        <div className="bg-slate-900 mb-24 lg:mb-10 mt-24 p-4 relative text-center rounded-2xl text-white">
-          <img
-            src={svgRabitImage}
-            alt=""
-            className="mx-auto relative -mt-[73px]"
-          />
-          <div className="max-w-[160px] mx-auto mt-6">
-            <div className="widget-title">Unlimited Access</div>
-            <div className="text-xs font-light">
-              Upgrade your system to business plan
-            </div>
-          </div>
-          <div className="mt-6">
-            <button className="btn bg-white hover:bg-opacity-80 text-slate-900 btn-sm w-full block">
-              Upgrade
-            </button>
-          </div>
-        </div>
       </SimpleBar>
     </div>
   );

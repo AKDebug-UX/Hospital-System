@@ -80,7 +80,7 @@ const Navmenu = ({ menus }) => {
         {menus.map((item, i) => (
           <li
             key={i}
-            className={` single-sidebar-menu 
+            className={` single-sidebar-menu
               ${item.child ? "item-has-children" : ""}
               ${activeSubmenu === i ? "open" : ""}
               ${locationName === item.link ? "menu-item-active" : ""}`}
@@ -102,7 +102,7 @@ const Navmenu = ({ menus }) => {
             {/*    !!sub menu parent   */}
             {item.child && (
               <div
-                className={`menu-link ${
+                className={`menu-link mt-3 ${
                   activeSubmenu === i
                     ? "parent_active not-collapsed"
                     : "collapsed"
